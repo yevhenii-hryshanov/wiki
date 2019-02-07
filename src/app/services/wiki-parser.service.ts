@@ -17,16 +17,16 @@ export class WikiParserService {
 
   parseWikiText(data) {
     this.results = []
-    let unparsedPage = data.replace(/\n\*/g, '');
-    
+    let unparsedPage = data;
+
     this.searchKeys.forEach(key => {
 
-      let category = new RegExp(`${key}(.*?)\n`, 'g');
+      let curkey = new RegExp(`${key}(.*?)\n`, 'g');
 
-      const regex = /\[\[([^\]\[:]+)\|([^\]\[:]+)\]\]/g;
+      const regex = /\[\[(?!.+?:)(.+?)\|(.+?)\]\]/g;
 
-      const categoryMatches = unparsedPage.match(category);
-
+      const categoryMatches = unparsedPage.match(curkey);
+      console.log(categoryMatches)
       let m;
 
 
