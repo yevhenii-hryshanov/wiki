@@ -1,0 +1,16 @@
+<div class="wrapper">
+
+    <h1>Enter wikipedia link</h1>
+    <form (ngSubmit)="onSubmit()">
+      <input type="text"
+        placeholder="enter link"
+       [(ngModel)]="wikiLink"
+       name="wikiLink">
+      <button>Search Relatives</button>
+    </form>
+
+    <app-list 
+      [relatives]="relatives">
+    </app-list>
+</div>
+

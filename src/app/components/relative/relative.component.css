@@ -1,0 +1,13 @@
+li {
+    font-size: 18px;
+    line-height: 1.5;
+}
+
+li.relatives {
+    color: green;
+}
+
+li.not-relatives {
+    color: red;
+}
+

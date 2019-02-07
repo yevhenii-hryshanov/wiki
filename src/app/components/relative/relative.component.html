@@ -1,0 +1,9 @@
+<li [ngClass]="isRelatives ? 'relatives'  : 'not-relatives'">
+    <span> {{ relative }} </span>
+
+    <span *ngIf="isRelatives;else notRelatives"> Ok </span>
+
+    <ng-template #notRelatives>
+        <span>Not Ok</span>
+    </ng-template>
+</li>

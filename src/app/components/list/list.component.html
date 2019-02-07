@@ -1,0 +1,6 @@
+<h4></h4>
+<ul *ngIf="relatives">
+  <ng-container *ngFor="let relative of relatives">
+    <app-relative [relative]="relative"></app-relative>
+  </ng-container>
+</ul>

@@ -1,0 +1,22 @@
+.wrapper {
+    padding: 50px;
+}
+
+form {
+    height: 30px;
+}
+input {
+    height: 100%;
+}
+
+button {
+    height: 100%;
+    background: #fff;
+    outline: none;
+    border: 1px solid gray;
+    padding: 0 10px;
+}
+
+h1 {
+    margin-bottom: 25px;
+}
