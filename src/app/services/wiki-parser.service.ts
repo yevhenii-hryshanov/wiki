@@ -34,6 +34,8 @@ export class WikiParserService {
         if(!relativeReg.test(unparsedPage)){return }
 
         let relatives = unparsedPage.match(relativeReg)[0];
+
+
         // If have link
         if(/\[\[.*\]\]/.test(relatives)) {
 
@@ -46,7 +48,6 @@ export class WikiParserService {
   
 
     })
-    console.log(this.results)
     return this.results
   }
 
