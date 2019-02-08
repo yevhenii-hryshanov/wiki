@@ -36,7 +36,7 @@ export class RelativeComponent implements OnInit {
 
       data.forEach(el => {
         console.log(this.searchedRelative)
-        if(el.includes(this.searchedRelative)) {
+        if(el == this.searchedRelative) {
           this.isRelatives = true;
         }
       })
