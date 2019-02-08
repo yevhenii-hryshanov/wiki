@@ -25,17 +25,18 @@ export class RelativeComponent implements OnInit {
   ngOnInit() {
 
     this.getSearchedRelative()
-
     this.getArticle(this.relative);
-
 
   }
 
   getArticle(articleTitle) {
     this.wiki.getArticle(articleTitle).subscribe(data => {
+      console.log(articleTitle)
       console.log(data)
+
       data.forEach(el => {
-        if(el == this.searchedRelative) {
+        console.log(this.searchedRelative)
+        if(el.includes(this.searchedRelative)) {
           this.isRelatives = true;
         }
       })

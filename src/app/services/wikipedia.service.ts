@@ -14,10 +14,10 @@ export class WikipediaService {
   constructor(private http: HttpClient,
               private parser:WikiParserService) { }
 
-  private baseUrl = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=revisions&rvprop=content&rvsection=0&origin=*&redirects&titles='
+  private baseUrl = 'https://en.wikipedia.org/w/api.php?format=json&action=query&prop=revisions&rvprop=content&origin=*&redirects&titles='
 
   getArticle(title) {
-    return this.http.get(`${this.baseUrl}${title}`).pipe(
+    return this.http.get(`${this.baseUrl}${title}&rvsection=0`).pipe(
       map((data:any) => {
 
         let value = Object.keys(data.query.pages)[0]
