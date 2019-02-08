@@ -40,7 +40,12 @@ export class RelativeComponent implements OnInit {
           this.isRelatives = true;
         }
       })
+    })
+  }
 
+  searchRelative(article, searched ) {
+    this.wiki.isRelative(article, this.searchedRelative).subscribe(result => {
+      this.isRelatives = result;
     })
   }
 
@@ -51,3 +56,4 @@ export class RelativeComponent implements OnInit {
     }
 
 }
+

@@ -23,14 +23,27 @@ export class WikipediaService {
         let value = Object.keys(data.query.pages)[0]
         let unparsedInfo = data.query.pages[value].revisions[0]['*']
 
-        return this.parseText(unparsedInfo)
+        return this.parser.parseWikiText(unparsedInfo)
 
       })
     )
 
   }
 
-  parseText(data) {
-    return this.parser.parseWikiText(data)
+  isRelative(title, query) {
+    return this.http.get(`${this.baseUrl}${title}&rvsection=0`).pipe(
+      map((data:any) => {
+      
+        let value = Object.keys(data.query.pages)[0]
+        let unparsedInfo = data.query.pages[value].revisions[0]['*']
+        console.log(query)
+        if(unparsedInfo.includes(query)) {
+          return true
+        }
+
+      })
+    )
   }
+
+
 }
