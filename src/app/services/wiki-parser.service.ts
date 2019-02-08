@@ -29,7 +29,7 @@ export class WikiParserService {
       
       let relativeReg = new RegExp(`(${currentKey}.*\}\})|(${currentKey}.*[/)])|(${currentKey}.*\]\])`, 'g');
 
-      let relatives = unparsedPage.match(relativeReg);
+      let relatives = unparsedPage.match(relativeReg)[0];
 
       console.log(relatives)
 
