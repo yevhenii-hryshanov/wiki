@@ -1,6 +1,13 @@
 <h4></h4>
-<ul *ngIf="relatives">
-  <ng-container *ngFor="let relative of relatives">
-    <app-relative [relative]="relative"></app-relative>
+<div *ngIf="relatives">
+  <ul>
+    <ng-container *ngFor="let relative of relatives">
+      <app-relative [relative]="relative"></app-relative>
+    </ng-container>
+  </ul>
+
+  <ng-container *ngIf="!relatives.length">
+    <div>no link to relatives</div>
   </ng-container>
-</ul>
+</div>
+

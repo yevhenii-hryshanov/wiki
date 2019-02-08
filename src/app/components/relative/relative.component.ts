@@ -31,11 +31,8 @@ export class RelativeComponent implements OnInit {
 
   getArticle(articleTitle) {
     this.wiki.getArticle(articleTitle).subscribe(data => {
-      console.log(articleTitle)
-      console.log(data)
 
       data.forEach(el => {
-        console.log(this.searchedRelative)
         if(el == this.searchedRelative) {
           this.isRelatives = true;
         }
