@@ -44,6 +44,10 @@ export class SearchComponent implements OnInit {
   getArticle(title) {
     this.wikipedia.getArticle(title).subscribe((data) => {
       this.relatives = data;
+    },
+    error => {
+      alert('Enter Valid URL');
+      this.wikiLink = '';
     })
   }
 }
